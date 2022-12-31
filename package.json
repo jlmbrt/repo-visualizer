@@ -1,16 +1,28 @@
 {
+  "name": "@jlmbrt/repo-visualizer",
+  "version": "0.0.0-beta.3",
+  "private": false,
+  "main": "cli.js",
   "files": [
     "cli.js"
   ],
+  "bin": {
+    "repo-visualizer": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlmbrt/repo-visualizer"
+  },
   "scripts": {
     "build": "node_modules/.bin/esbuild --target=es2019 ./src/index.jsx --bundle --platform=node --outfile=index.js",
-    "build:cli": "node_modules/.bin/esbuild --target=es2019 ./src/cli.jsx --bundle --platform=node --outfile=cli.js",
+    "build:cli": "node_modules/.bin/esbuild --target=es2019 ./src/cli.jsx --bundle --platform=node --outfile=cli.js --minify",
     "prepare": "husky install",
     "typecheck": "yarn run tsc --noEmit --allowJs",
     "test:jest": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test": "npm run test:jest --"
+    "test": "npm run test:jest --",
+    "prepack": "npm run build:cli"
   },
   "dependencies": {},
   "devDependencies": {
@@ -19,6 +31,7 @@
     "@actions/exec": "^1.1.1",
     "@types/jest": "^27.0.1",
     "@types/micromatch": "^4.0.2",
+    "commander": "^9.4.1",
     "d3": "^7.8.0",
     "esbuild": "^0.16.12",
     "husky": "^7.0.0",
