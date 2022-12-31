@@ -65,5 +65,3 @@ const program = createCommand("repo-visualizer")
   .action(cliHandler);
 
 program.parseAsync();
-
-program.parseAsync();
