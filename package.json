@@ -1,6 +1,6 @@
 {
   "name": "@jlmbrt/repo-visualizer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "main": "cli.js",
   "files": [
@@ -16,7 +16,6 @@
   "scripts": {
     "build": "node_modules/.bin/esbuild --target=es2019 ./src/index.jsx --bundle --platform=node --outfile=index.js",
     "build:cli": "node_modules/.bin/esbuild --target=es2019 ./src/cli.jsx --bundle --platform=node --outfile=cli.js --minify",
-    "prepare": "husky install",
     "typecheck": "yarn run tsc --noEmit --allowJs",
     "test:jest": "jest",
     "test:watch": "jest --watch",
